@@ -24,8 +24,8 @@ void USkeletonController::BeginPlay()
 	PoseableMesh = this->GetOwner()->FindComponentByClass<UPoseableMeshComponent>();
 
 	SkeletalMesh->bEnableUpdateRateOptimizations = true;
-	SkeletalMesh->MeshComponentUpdateFlag = EMeshComponentUpdateFlag::AlwaysTickPoseAndRefreshBones;
-
+	//SkeletalMesh->MeshComponentUpdateFlag = EMeshComponentUpdateFlag::AlwaysTickPoseAndRefreshBones;
+	SkeletalMesh->VisibilityBasedAnimTickOption = EVisibilityBasedAnimTickOption::AlwaysTickPoseAndRefreshBones;
 	SkeletonBoneNames = SkeletalMesh->GetAllSocketNames();
 
 	BoneNumber = SkeletalMesh->GetNumBones();	
